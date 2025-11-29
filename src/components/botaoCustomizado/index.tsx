@@ -1,5 +1,9 @@
-import { Button, ButtonProps } from 'react-native';
+import { Button, ButtonProps, View } from 'react-native';
 
 export function ButtonCustomizado({ ...rest }: ButtonProps) {
-  return <Button {...rest} />;
+  return (
+    <View className="w-full">
+      <Button {...rest} />
+    </View>
+  );
 }
