@@ -6,6 +6,9 @@ import { Text, View } from 'react-native';
 export function LoginScreen() {
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
+  function logar() {
+    console.log('login', login, 'senha', senha);
+  }
 
   return (
     <View className="flex-1 items-center justify-center">
@@ -19,12 +22,13 @@ export function LoginScreen() {
           secureTextEntry={true}
         />
 
-        <ButtonCustomizado
-          title="Entrar"
-          onPress={() => console.log('login', login, 'senha', senha)}
-        />
+        <ButtonCustomizado title="Entrar" onPress={logar} />
 
-        <Text className="text-blue-400">esqueceu a Senha?</Text>
+        <View className="flex-row gap-4">
+          <Text className="text-xl text-blue-400">Cadastrar-se</Text>
+          <Text className='text-xl'>|</Text>
+          <Text className="text-blue-400 text-xl">Esqueceu a senha</Text>
+        </View>
       </View>
     </View>
   );
