@@ -9,9 +9,12 @@ export function Telacontador() {
   return (
     <View className="flex-1 items-center justify-center">
       <Text className="text-3xl"> inputs </Text>
-      {contador}
+
+      
+    
 
       <ButtonCustomizado title="+" onPress={() => setContador(contador + 1)} />
+        <Text className= ""> {contador} </Text>
     </View>
   );
 }
