@@ -10,7 +10,7 @@ export function LoginScreen() {
   const navigation = useNavigation();
   function logar() {
     console.log('login', login, 'senha', senha);
-    navigation;
+    navigation.navigate('soma');
   }
 
   return (
