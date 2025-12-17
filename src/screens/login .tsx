@@ -1,13 +1,16 @@
 import { ButtonCustomizado } from '@/components/botaoCustomizado';
 import { InputCustomizado } from '@/components/inputcustomizado';
+import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { Text, View } from 'react-native';
 
 export function LoginScreen() {
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
+  const navigation = useNavigation();
   function logar() {
     console.log('login', login, 'senha', senha);
+    navigation;
   }
 
   return (
@@ -26,10 +29,10 @@ export function LoginScreen() {
 
         <View className="flex-row gap-4">
           <Text className="text-xl text-blue-400">Cadastrar-se</Text>
-          <Text className='text-xl'>|</Text>
-          <Text className="text-blue-400 text-xl">Esqueceu a senha</Text>
+          <Text className="text-xl">|</Text>
+          <Text className="text-xl text-blue-400">Esqueceu a senha</Text>
         </View>
       </View>
     </View>
   );
-} 
+}

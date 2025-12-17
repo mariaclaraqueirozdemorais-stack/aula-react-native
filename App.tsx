@@ -5,13 +5,22 @@ import { LoginScreen } from '@/screens/login ';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Soma } from '@/screens/soma';
 import { ListaScreen } from '@/screens/listas';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
     <>
       <SafeAreaView className=" flex-1">
-        <ListaScreen />
-      </SafeAreaView>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="login" component={LoginScreen} />
+            <Stack.Screen name="soma" component={Soma} />
+          </Stack.Navigator>
+        </NavigationContainer>
+
+     </SafeAreaView>
 
       <StatusBar style="auto" />
     </>
